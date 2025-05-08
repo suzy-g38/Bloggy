@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
+import Layout from './pages/Layout';
+import Blog from './pages/Blogs';
+import CreateBlogPage from './pages/Create';
+import BlogDetails from './pages/BlogDetail';
+import Error from './pages/Error';
+import Home from './pages/Home';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="blog/:id" element={<BlogDetails />} />
+        <Route path="blogs" element={<Blog />} />
+        <Route path="dashboard" element={<Blog />} />
+        <Route path="create" element={<CreateBlogPage />} />
+        <Route path="edit/:id" element={<CreateBlogPage />} />
+        <Route path="*" element={<Error/>} /> 
+      </Route>
+    </>
+  )
+);
 
 export default App;
