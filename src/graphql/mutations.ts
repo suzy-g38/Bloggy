@@ -21,11 +21,12 @@ export const DELETE_BLOG = gql`
 `;
 
 export const UPDATE_BLOG = gql`
-  mutation UpdateBlog($id: ID!, $title: String!, $content: String!) {
-    updateBlog(id: $id, title: $title, content: $content) {
+  mutation UpdateBlog($id: ID!, $title: String!, $content: String!,$bannerUrl: String) {
+    updateBlog(id: $id, title: $title, content: $content,bannerUrl: $bannerUrl) {
       id
       title
       content
+      bannerUrl
       updatedAt
       userId
     }

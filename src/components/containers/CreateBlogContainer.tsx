@@ -48,7 +48,7 @@ const CreateBlogContainer: React.FC<CreateBlogContainerProps> = () => {
     },
     onError: (error) => {
       console.error('Error creating blog:', error);
-      toast.error('Failed to create blog.');
+      toast.error(error.message);
     },
   });
 
@@ -59,7 +59,7 @@ const CreateBlogContainer: React.FC<CreateBlogContainerProps> = () => {
     },
     onError: (error) => {
       console.error('Error updating blog:', error);
-      toast.error('Failed to update blog.');
+      toast.error(error.message);
     },
   });
 

@@ -8,7 +8,6 @@ export const GET_BLOGS = gql`
         title
         content
         author
-        like
         updatedAt,
         bannerUrl
       }
@@ -24,7 +23,6 @@ export const GET_BLOG_BY_ID = gql`
       title
       content
       author
-      like
       updatedAt
       bannerUrl
     }

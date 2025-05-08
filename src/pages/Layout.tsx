@@ -24,12 +24,6 @@ const darkTheme = {
   buttonHover: '#003d82',
 };
 
-// Define the context shape with TypeScript
-interface ThemeContextType {
-  theme: 'light' | 'dark';
-  toggleTheme: () => void;
-}
-
 // Styled Components for Layout
 const PageWrapper = styled.div`
   display: flex;

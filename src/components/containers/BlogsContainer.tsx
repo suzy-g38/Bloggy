@@ -57,7 +57,7 @@ const BlogsPageContainer: React.FC = () => {
     onError: error => {
       console.error('Error fetching user blogs:', error);
       setHasMore(false);
-      toast.error('Failed to load user blogs.');
+      toast.error('Failed to load blogs.');
     },
     fetchPolicy: 'network-only',
   });
@@ -71,7 +71,7 @@ const BlogsPageContainer: React.FC = () => {
     },
     onError: error => {
       console.error('Error deleting blog:', error);
-      toast.error('Failed to delete blog.');
+      toast.error(error.message);
     },
   });
 

@@ -98,7 +98,7 @@ const BlogDetailsPresenter: React.FC<BlogDetailsPresenterProps> = ({
   }
 
   if (error) {
-    return <Container>Error: {error}</Container>;
+    return <Container>Sorry: Something went wrong</Container>;
   }
 
   if (!blog) {
@@ -113,7 +113,6 @@ const BlogDetailsPresenter: React.FC<BlogDetailsPresenterProps> = ({
       </Metadata>
       {blog.bannerUrl && <Banner src={blog.bannerUrl} alt="Banner" />}
       <Content dangerouslySetInnerHTML={{ __html: blog.content }} />
-      <Likes>❤️ {blog.like} likes</Likes>
     </Container>
   );
 };

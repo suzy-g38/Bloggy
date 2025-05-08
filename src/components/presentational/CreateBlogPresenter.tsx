@@ -296,7 +296,7 @@ const CreateBlogPresenter: React.FC<CreateBlogPresenterProps> = ({
 
   if (isEditMode && fetchError) {
     toast.error('Failed to load blog data.');
-    return <Container>Error loading blog data: {fetchError}</Container>;
+    return <Container>Sorry: Something went wrong</Container>;
   }
 
   return (
